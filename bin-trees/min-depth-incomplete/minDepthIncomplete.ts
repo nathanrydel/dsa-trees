@@ -6,22 +6,24 @@ import { BNodeNum } from "../common/bintree";
  */
 
 function minDepthToIncompleteNode(node: BNodeNum): number {
-  if(node.lnode === null) return 0;
-  if(node.rnode === null) return 0;
+  if (node === null) return 0;
+  if (node.lnode === null) return 1;
+  if (node.rnode === null) return 1;
 
-  let minLeftNodeDepth = 0;
-  let minRightNodeDepth = 0;
+  debugger;
 
+  let minDepth = 0;
+  debugger;
 
-  minLeftNodeDepth =
-    (Math.max(minDepthToIncompleteNode(node.lnode), minLeftNodeDepth));
-    debugger;
-  minRightNodeDepth =
-    (Math.max(minDepthToIncompleteNode(node.rnode), minRightNodeDepth));
-    debugger;
+  minDepth = (
+    Math.min(
+      minDepthToIncompleteNode(node.lnode),
+      minDepthToIncompleteNode(node.rnode)) + 1
+  );
 
-  return Math.min(minLeftNodeDepth, minRightNodeDepth) + 1;
+  debugger;
 
+  return minDepth;
 }
 
 export { minDepthToIncompleteNode };

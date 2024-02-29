@@ -8,9 +8,11 @@ it("handles simple trees", function () {
 });
 
 it("handles more complex trees", function () {
+  debugger;
   expect(minDepthToIncompleteNode(largeTree.root!)).toBe(2);
 });
 
 it("handles long tree", function () {
+  debugger;
   expect(minDepthToIncompleteNode(longTree.root!)).toBe(2);
 });
