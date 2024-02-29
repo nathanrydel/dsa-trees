@@ -50,20 +50,20 @@ const longTree = new BinTreeNum(
                 new BNodeNum(1)))));
 
 it("builds trees", function () {
-  expect(smallTree.root!.val).toBe(6);
-  expect(largeTree.root!.val).toBe(6);
-  expect(longTree.root!.val).toBe(6);
+    expect(smallTree.root!.val).toBe(6);
+    expect(largeTree.root!.val).toBe(6);
+    expect(longTree.root!.val).toBe(6);
 });
 
 it("serializes", function () {
-  expect(new BinTreeNum().serialize()).toBe("");
-  expect(new BinTreeNum(new BNodeNum(5)).serialize()).toBe("5 - -");
+    expect(new BinTreeNum().serialize()).toBe("");
+    expect(new BinTreeNum(new BNodeNum(5)).serialize()).toBe("5 - -");
 
-  expect(smallTree.serialize()).toBe("6 5 5 - - - -");
-  expect(largeTree.serialize()).toBe("6 5 5 - - 3 1 2 1 - - - - - -");
-  expect(longTree.serialize()).toBe(
-      "6 5 5 4 - - 3 3 - 2 1 2 1 1 - - - - - - - - -");
-})
+    expect(smallTree.serialize()).toBe("6 5 5 - - - -");
+    expect(largeTree.serialize()).toBe("6 5 5 - - 3 1 2 1 - - - - - -");
+    expect(longTree.serialize()).toBe(
+        "6 5 5 4 - - 3 3 - 2 1 2 1 1 - - - - - - - - -");
+});
 
 
 export { smallTree, largeTree, longTree };
