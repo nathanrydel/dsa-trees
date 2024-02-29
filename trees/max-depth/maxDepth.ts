@@ -6,10 +6,12 @@ import { TreeNodeNum } from "../common/tree";
  **/
 
 function maxDepth(node: TreeNodeNum | null): number {
+  if (node === null) return 0;
+
   let maxNodeDepth = 0;
-  if(node === null) return 0;
-  for(const child of node.children){
-    maxNodeDepth = Math.max(maxDepth(child), maxNodeDepth);
+  for (const child of node.children) {
+    const childDepth = maxDepth(child);
+    maxNodeDepth = Math.max(childDepth, maxNodeDepth);
   }
 
   return maxNodeDepth + 1;
