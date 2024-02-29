@@ -4,7 +4,9 @@ import { BNodeNum } from "../common/bintree";
  * Returns an array of visited nodes. */
 
 function preOrder(node: BNodeNum | null): number[] {
-  return [42];
+  if (node === null) return [];
+
+  return [node.val, ...preOrder(node.lnode), ...preOrder(node.rnode)];
 }
 
 
