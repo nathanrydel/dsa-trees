@@ -14,7 +14,9 @@ function preOrder(node: BNodeNum | null): number[] {
  * Returns an array of visited nodes. */
 
 function postOrder(node: BNodeNum | null): number[] {
-  return [42];
+  if (node === null) return [];
+
+  return [...postOrder(node.lnode), ...postOrder(node.rnode), node.val];
 }
 
 export { preOrder, postOrder };
